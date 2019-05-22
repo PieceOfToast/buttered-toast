@@ -54,7 +54,7 @@ def commands_command(message, client, args):
     except Exception as e:
         print(e)
 ch.add_command({
-    'trigger': '!commands',
+    'trigger': '^^commands',
     'function': commands_command,
     'args_num': 0,
     'args_name': [],
@@ -79,7 +79,7 @@ def ip_command(message, client, args):
     except Exception as e:
         print(e)
 ch.add_command({
-    'trigger': '!ip',
+    'trigger': '^^ip',
     'function': ip_command,
     'args_num': 1,
     'args_name': ['IP\Domain'],
