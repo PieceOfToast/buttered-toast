@@ -2,7 +2,37 @@
 import discord
 import requests
 import json
-
+a = ["Bulbasaur ",
+     "Bulbasaur ","Bulbasaur ","Ivysaur ","Venusaur",
+     "Charmander","Charmeleon","Charizard","Squirtle",
+     "Wartortle","Blastroise","Caterpie","Metapod",
+     "Butterfree","Weedle","Weedle","Kakuna","Beedrill",
+     "Pidgey","Pidgey","Pidgey","Pidgey","Pidgey","Pidgey",
+     "Pidgey","Pidgey","Pidgeotto","Pidgeot","Rattata","Raticate",
+     "Raticate","Spearow","Fearow","Ekans","Arbok","Pikachu","Raichu",
+     "Sandshrew","Sandslash","Nidoran♀","Nidoran♀","Nidoran♀",
+     "Nidoran♀","Nidorina","Nidoqueen","Nidoran♀","Nidorino",
+     "Nidoking","Clefairy","Clefable","Vulpix","Ninetales",
+     "Jigglypuff","Wigglytuff","Zubat","Zubat","Zubat","Golbat",
+     "Oddish","Gloom","Vileplume","Paras","Parasect","Venomat","Venomoth",
+     "Diglett","Diglett","Diglett","Dugtrio","Meowth","Meowth","Meowth",
+     "Persian","Psyduck","Golduck","Mankey","Primeape","Primeape","Growlithe",
+     "Growlithe","Growlithe","Arcanine","Poliwag","Poliwhirl","Polywrath","Abra",
+     "Abra","Abra","Abra","Kadabra","Alakazam","Machop","Machop","Machop","Machop",
+     "Machoke","Machamp","Bellsprout","Weepinbell","Victreebel","Tentacool",
+     "Tentacruel","Geodude","Graveler","Golem","Ponyta","Ponyta","Ponyta","Rapidash",
+     "Slowpoke","Slowbro","Magnemite","Magneton","Farfetch'd","Doduo",
+     "Dodrio","Seel","Dewgong","Grimer","Grimer","Grimer","Grimer","Muk",
+     "Shellder","Cloyster","Gastly","Haunter","Gengar","Gengar","Onix","Drowzee",
+     "Hypno","Krabby","Krabby","Krabby","Krabby","Kingler","Voltrob","Electrode",
+     "Exeggcute","Exeggutor","Cubone","Marowak","Marowak","Marowak","Hitmonlee",
+     "Hitmonchan","Lickitung","Koffing","Koffing","Koffing","Weezing","Rhyhorn",
+     "Rhydon","Kangaskhan","Horsea","Seadra","Goldeen","Seaking","Staryu","Starmie",
+     "Mr. Mime","Scyther","Scyther","Jynx","Electrabuzz","Magmar","Magmar","Magmar",
+     "Magmar","Pinsir","Tauros","Magikarp","Magikarp","Magikarp","Magikarp","Magikarp",
+     "Gyrados","Eevee","Vaperon","Joltob","Joltob","Flareon","Porygon","Omanyte","Omastar",
+     "Kabuto","Kabutops","Kabutops","Areodactyl","Snorlax","Articuno","Zapdos","Moltres",
+     "Dratini","Dratini","Dratini","Dragonair","Dragonite","Mewtwo","Mew","MissingNo","Marshadow"]
 # command handler class
 
 class CommandHandler:
@@ -86,7 +116,18 @@ ch.add_command({
     'description': 'Prints information about provided IP/Domain!'
 })
 ## end ip command
-
+def catchpokemon_function(message, client, args):
+    try:
+        return 'You have caught a', random.choice(a) 
+    except Exception as e:
+        return 'please type a number to catch a pokemon'
+ch.add_command({
+    'trigger': '*spawn',
+    'function': catchpokemon_function,
+    'args_num': 0,
+    'args_name': [],
+    'description': 'Will catch a pokimane (IN BETA TESTING)'
+})
 # bot is ready
 @client.event
 async def on_ready():
